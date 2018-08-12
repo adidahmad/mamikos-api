@@ -28,7 +28,7 @@ Route::get('room/detail/{id}', 'OwnerController@GetRoomDetail');
 // get room by sorting
 Route::get('room/{sort}', 'OwnerController@GetRoomBySorting');
 
-// get room by search type
+// get room by search
 Route::post('room', 'OwnerController@GetRoomBySearchType');
 
 // delete a room

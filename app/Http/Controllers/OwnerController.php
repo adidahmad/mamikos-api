@@ -68,7 +68,7 @@ class OwnerController extends Controller
     {
         if ($request->type == "roomName") {
             $rooms = DB::table('rooms')
-                ->where('roomName', 'like', '%'. $request->roomName . '%')
+                ->where('roomName', 'like', '%'. $request->keyword . '%')
                 ->select('*')
                 ->get();
             
@@ -76,7 +76,7 @@ class OwnerController extends Controller
         }
         else if ($request->type == "city") {
             $rooms = DB::table('rooms')
-                ->where('city', 'like', '%'. $request->city . '%')
+                ->where('city', 'like', '%'. $request->keyword . '%')
                 ->select('*')
                 ->get();
 
@@ -84,7 +84,7 @@ class OwnerController extends Controller
         } 
         else if ($request->type == "price") {
             $rooms = DB::table('rooms')
-                ->where('price', $request->price)
+                ->where('price', $request->keyword)
                 ->select('*')
                 ->get();
 
